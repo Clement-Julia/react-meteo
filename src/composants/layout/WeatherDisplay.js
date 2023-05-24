@@ -1,15 +1,35 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
-export default function WeatherDisplay({data}) {
-	return (
+export default function WeatherDisplay({ data }) {
+
+    const [inputValue, setInputValue] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        console.log("TEST")
+        console.log(inputValue)
+        if (inputValue) {
+            navigate(`/searchForm/${inputValue}`);
+        }
+    };
+
+    console.log(data)
+    return (
         <div className='container d-flex justify-content-center'>
             <div className='container-meteo'>
                 <header className='header-meteo'>
                     <h1 className='h1-meteo'>Météo</h1>
                 </header>
                 <div className='content-meteo'>
-                    <input className='input-meteo' placeholder='Rechercher une localisation' type='text' />
-                    <button className='btn-meteo'>
+                    <input
+                        className='input-meteo'
+                        placeholder='Search for location'
+                        type='text'
+                        value={inputValue}
+                        onChange={e => setInputValue(e.target.value)}
+                    />
+                    <button className='btn-meteo' onClick={handleSearch}>
                         <i className="fa-solid fa-magnifying-glass fa-xl icon-search"></i>
                     </button>
                 </div>

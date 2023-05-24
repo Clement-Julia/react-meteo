@@ -11,7 +11,6 @@ import ErreurRequete from '../pages/ErreurRequete';
 const Routeur = () => {
 	return (
 		<BrowserRouter>
-            <Navigation/>
                 <Routes>
                     <Route exact path='/' element={<Home/>} />
                     <Route path='searchForm/:ville' element={<SearchForm/>} />

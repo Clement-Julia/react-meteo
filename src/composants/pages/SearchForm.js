@@ -31,20 +31,15 @@ const SearchForm = () => {
         }
     }
 
-    console.log("2")
     return (
-        <div>
-            <div className='d-flex justify-content-center mt-4'>
-                <div key={data.id}>
-                    <ToastContainer />
-                    {data.main && (
-                        <>
-                            <WeatherDisplay data={data} /> { }
-                        </>
-                    )
-                    }
-                </div>
-            </div>
+        <div className='d-flex justify-content-center mt-4'>
+            <ToastContainer />
+            {data.main && (
+                <>
+                    <WeatherDisplay data={data} /> { }
+                </>
+            )
+            }
         </div>
     )
 }
