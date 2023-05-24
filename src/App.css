@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+/* WeatherDisplay css */
+
+body{
+  cursor: auto;
+  font-family:Poppins, sans-serif;
+  min-height:721.6px;
+  background: linear-gradient(rgb(219, 247, 247) 0%, rgb(56, 200, 230) 100%);
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-meteo {
+  max-width: 960px;
+  width: 100%;
+  margin: auto 0px;
+  padding: 0px 16px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-meteo {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
   display: flex;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 128px;
 }
 
-.App-link {
-  color: #61dafb;
+.h1-meteo {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  color: rgb(47, 93, 138);
+  font-size: 35.2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-meteo {
+  margin: 0px 0px 22.4px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  position: relative;
+  height: 52px;
+  border-radius: 26px;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+  margin-bottom: 22.4px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all ease 0.5s;
+}
+
+.content-meteo:focus-visible{
+  box-shadow: rgb(47, 93, 138) 0px 7px 29px 0px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.input-meteo {
+  margin: 0px 0px 0px 16px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  flex: 1 1 0%;
+  margin-left: 30px;
+  height: 52px;
+  border: 0px none rgb(114, 126, 142);
+  background-color: rgb(255, 255, 255);
+  font-size: 18px;
+  color: rgb(114, 126, 142);
+  width: 100%;
+  outline: none;
+}
+
+.btn-meteo{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  border: 0px none rgb(0, 0, 0);
+  cursor: pointer,;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  display: contents;
+}
+
+.icon-search {
+  margin: 0px 19.2px 0px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  margin-right: 19.2px;
+  color: rgb(74, 111, 161);
+}
+
+.desc-meteo{
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.city {
+  color: rgb(47, 93, 138);
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.color-cloud {
+  color: #7b98b2;
+}
+
+.color-sky {
+  color: #aabfdc
+}
+
+.x-large{
+  font-size: x-large;
 }
