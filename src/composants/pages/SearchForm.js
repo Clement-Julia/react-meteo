@@ -8,40 +8,40 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SearchForm = () => {
 
-    console.log("0")
     const [data, setData] = useState([])
     const { ville = '' } = useParams()
 
-    useEffect(() => {
-        fetchData();
-    }, [ville]);
+    if (ville !== '') {
+        useEffect(() => {
+            fetchData();
+        }, [ville]);
 
+        const fetchData = async () => {
+            try {
+                var url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&lang=fr&appid=45aced123b10e9fff410b71fe3fcffa4&units=metric`
+                const response = await axios.get(url)
+                setData(response.data)
 
-    console.log("1")
-
-    const fetchData = async () => {
-        try {
-            var url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&lang=fr&appid=45aced123b10e9fff410b71fe3fcffa4&units=metric`
-            console.log("URL : " + url)
-            const response = await axios.get(url)
-            setData(response.data)
-
-        } catch (error) {
-            toast.error(`Une erreur s'est pfhdsgusroduite : ${error.message}`);
+            } catch (error) {
+                toast.error(`Une erreur s'est produite : ${error.message}`);
+            }
         }
+
     }
 
     return (
         <div className='d-flex justify-content-center mt-4'>
             <ToastContainer />
-            {data.main && (
+            {/* {data.main && ( */}
                 <>
                     <WeatherDisplay data={data} /> { }
                 </>
-            )
-            }
+            {/* ) */}
+            {/* } */}
         </div>
     )
+
+
 }
 
 export default SearchForm
