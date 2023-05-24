@@ -4,7 +4,7 @@ import Navigation from '../layout/navigation'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Home from '../pages/Home';
+import Home from '../pages/Home'
 import NotFound from './error-page'
 import SearchForm from '../pages/SearchForm';
 import ErreurRequete from '../pages/ErreurRequete';
