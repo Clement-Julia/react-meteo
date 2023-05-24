@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Routeur from './components/routes/Routeur'
+import Routeur from './composants/routes/Routeur'
 
 export default function App() {
 	return <Routeur />
