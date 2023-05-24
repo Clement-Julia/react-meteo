@@ -13,7 +13,7 @@ const Routeur = () => {
 		<BrowserRouter>
                 <Routes>
                     <Route exact path='/' element={<Home/>} />
-                    <Route path='searchForm/:ville' element={<SearchForm/>} />
+                    <Route path='/:ville' element={<SearchForm/>} />
                     <Route path='erreur-requete' element={<ErreurRequete/>} />
                     <Route path='*' element={<NotFound />}/>
                 </Routes>

@@ -3,45 +3,40 @@ import { useParams, Navigate } from 'react-router-dom'
 import axios from 'axios'
 import WeatherDisplay from '../layout/WeatherDisplay'
 import ErreurRequete from './ErreurRequete'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const SearchForm = () => {
+	const [data, setData] = useState([])
+	const { ville = '' } = useParams()
+    const lang = localStorage.getItem('degree');
 
-    const [data, setData] = useState([])
-    const { ville = '' } = useParams()
+	if (ville !== '') {
+		useEffect(() => {
+			fetchData()
+		}, [ville])
 
-    if (ville !== '') {
-        useEffect(() => {
-            fetchData();
-        }, [ville]);
+		const fetchData = async () => {
+			try {
+				var url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&lang=fr&appid=45aced123b10e9fff410b71fe3fcffa4&units=${lang == "true" ? 'imperial' : 'metric'}`
+				const response = await axios.get(url)
+				setData(response.data)
+			} catch (error) {
+				toast.error(`Une erreur s'est produite : ${error.message}`)
+			}
+		}
+	}
 
-        const fetchData = async () => {
-            try {
-                var url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&lang=fr&appid=45aced123b10e9fff410b71fe3fcffa4&units=metric`
-                const response = await axios.get(url)
-                setData(response.data)
-
-            } catch (error) {
-                toast.error(`Une erreur s'est produite : ${error.message}`);
-            }
-        }
-
-    }
-
-    return (
-        <div className='d-flex justify-content-center mt-4'>
-            <ToastContainer />
-            {/* {data.main && ( */}
-                <>
-                    <WeatherDisplay data={data} /> { }
-                </>
-            {/* ) */}
-            {/* } */}
-        </div>
-    )
-
-
+	return (
+		<div className='d-flex justify-content-center'>
+			<ToastContainer />
+			{data.main && (
+				<>
+					<WeatherDisplay data={data} /> {}
+				</>
+			)}
+		</div>
+	)
 }
 
 export default SearchForm
