@@ -32,7 +32,7 @@ const SearchForm = () => {
 			<ToastContainer />
 			{data.main && (
 				<>
-					<WeatherDisplay data={data} /> {}
+					<WeatherDisplay data={data} />
 				</>
 			)}
 		</div>
