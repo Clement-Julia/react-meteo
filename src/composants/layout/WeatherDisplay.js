@@ -20,7 +20,7 @@ export default function WeatherDisplay({ data }) {
 			}
 		}
 
-		return <input className='input-meteo' placeholder='Search for location' type='text' value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={handleKeyDown} />
+		return <input className='input-meteo' placeholder='Rechercher une localisation' type='text' value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={handleKeyDown} />
 	}
 
     const handleCheckboxChange = (e) => {

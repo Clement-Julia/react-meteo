@@ -27,14 +27,10 @@ const SearchForm = () => {
 		}
 	}
 
-    console.log('Test');
-    console.log(data);
-    console.log("");
 	return (
 		<div className='d-flex justify-content-center'>
 			<ToastContainer />
-            <p>Test</p>
-			{data.main && (
+			{data && (
 				<>
 					<WeatherDisplay data={data} />
 				</>
